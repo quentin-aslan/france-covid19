@@ -1,0 +1,453 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="keyword" content="Covid19 France Coronavirus Statistique">
+    <meta name="description" content="Statistique du COVID19 en France, actualités, informations.">
+    <meta name="author" content="Quentin Aslan">
+
+    <title>COVID19 - France - CORONAVIRUS</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/vendor/jquery/jquery.min.js"></script>
+
+    <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/sb-admin-perso.css" rel="stylesheet">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161216131-1"></script>
+    <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+
+    gtag('config', 'UA-161216131-1');
+    </script>
+
+    <!-- ADSENSE -->
+    <script data-ad-client="ca-pub-1922204380394243" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <a class="navbar-brand" href="index.html">COVID-19 - France</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <a class="btn btn-danger shadow" href="formulaire.html" target="_blank">
+                Avez-vous le COVID-19 ?
+                <i class="fas fa-user-nurse"></i>
+            </a>
+            <ul class="navbar-nav ml-auto">
+
+                <li>
+                    <span class="text-light font-weight-ligh text-xs nav-link"><i class="fas fa-phone-volume"></i>
+                        Numéro vert gratuit 24h/7j</span>
+                </li>
+                <li class="nav-item  active ">
+                    <a class="nav-link font-weight-bold" href="tel:0800130000">0 800 130 000<span
+                            class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main role="main" class="container">
+        <div class="alert alert-danger shadow">
+            <h2 class="text-center"><span id="timerConfinement"></span></h2>
+            <hr>
+            <h5 class="text-center">Avant la fin du confinement</h5>
+
+        </div>
+        <h4>Statistiques en France</h4>
+        <hr>
+
+        <div class="row">
+
+            <div class="col-lg-3 mb-4">
+                <div class="card bg-dark text-white shadow">
+                  <div class="card-body text-uppercase">
+                    <h1 style="float:left ">Inféctés </h1>
+                    <h1 class="text-white-50" style="float:right"><i class="fas fa-clinic-medical"></i> <span id="casesCountry"><i class="fas fa-spinner fa-pulse"></i></span></h1>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-3 mb-4">
+                <div class="card bg-danger text-white shadow">
+                  <div class="card-body text-uppercase">
+                    <h1 style="float:left">Morts </h1>
+                    <h1 class="text-white-50" style="float:right"><i class="fas fa-skull-crossbones"></i> <span id="deadCountry"><i class="fas fa-spinner fa-pulse"></i></span></h1>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-3 mb-4">
+                <div class="card bg-success text-white shadow">
+                  <div class="card-body text-uppercase">
+                    <h1 style="float:left ">Guéris </h1>
+                    <h1 class="text-white-50" style="float:right"><i class="far fa-smile-beam"></i> <span id="recoveredCountry"><i class="fas fa-spinner fa-pulse"></i></span></h1>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-3 mb-4">
+                <div class="card bg-primary text-white shadow">
+                  <div class="card-body text-uppercase">
+                    <hp style="float:left text-xs">Verbalisé pour
+                        non-respect du confinement</p>
+                    <h1 class="text-white-50" style="float:right"><i class="fas fa-shield-alt"></i> <span id="pvFrance"><i class="fas fa-spinner fa-pulse"></i></span></h1>
+                  </div>
+                </div>
+              </div>
+        </div>
+
+        <!-- Area Chart -->
+        <div class="col-xl-6 col-lg-6 offset-lg-3">
+            <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                <h6 class="m-0 font-weight-bold text-primary">Nombres de cas en France depuis le début de l'épidémie</h6>
+                </div>
+                <!-- Card Body -->
+                <div class="card-body">
+                <div class="chart-area">
+                    <canvas id="myAreaChart"></canvas>
+                </div>
+                </div>
+            </div>
+            </div>
+
+        <hr>
+        <div class="row">
+
+            <div class="alert alert-dark shadow col-lg-10 offset-lg-1 text-center ">
+                <a class="btn btn-danger btn-lg shadow" href="formulaire.html" target="_blank">
+                    Avez-vous le COVID-19 ?
+                    <i class="fas fa-user-nurse"></i>
+                </a>
+                <br /><br />
+                <h5>Répondez à ce questionnaire pour savoir si vous avez le Covid-19 et vous faire suivre par notre
+                    équipe d'étudiants en pharmacie volontaires.</h5>
+            </div>
+        </div>
+
+        <!-- CONFINEMENT -->
+        <div class="row">
+            <button class="btn btn-primary btn-lg shadow col-lg-10 offset-lg-1" data-toggle="modal"
+                data-target="#confinementModal">
+                <i class="fas fa-exclamation-triangle"></i>
+                Règles du confinement
+                <i class="fas fa-exclamation-triangle"></i>
+            </button>
+
+        </div>
+
+        <hr>
+        <div class="row">
+
+            <div class="alert alert-danger shadow text-center col-lg-10 offset-lg-1">
+                <h2>Don du <strong class="text-danger">sang</strong></h2>
+                <hr>
+                <h5>Les citoyens sont <strong>AUTORISÉS</strong> à se déplacer pour aller <strong class="text-danger">donner
+                        leur sang</strong> sur les sites de collecte de l'EFS</h5>
+                <button class="btn btn-danger btn-lg shadow col-lg-6" data-toggle="modal"
+                    data-target="#donduSangModal">
+                    <i class="fas fa-exclamation-triangle"></i>
+                        Se renseigner !
+                    <i class="fas fa-exclamation-triangle"></i>
+                </button>
+            </div>
+        </div>
+
+        <!-- END CONFINEMENT -->
+        <hr>
+        <h4>Statistiques Mondial</h4>
+        <hr>
+        <!-- Content Row -->
+        <div class="row">
+
+            <!-- Personnes gueris dans le monde -->
+            <div class="col-xl-4 col-md- mb-4">
+                <div class="card border-left-success shadow h-100 py-2">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                                <div class="font-weight-bold text-success text-uppercase mb-1">Guéris dans le monde
+                                </div>
+                                <div id="recoveredWorld" class="h3 mb-0 font-weight-bold text-gray-800"><i
+                                        class="fas fa-spinner fa-pulse"></i></div>
+                            </div>
+                            <div class="col-auto">
+                                <i class="far fa-smile-beam fa-2x"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Personnes morte dans le monde -->
+            <div class="col-xl-4 col-md-6 mb-4">
+                <div class="card border-left-danger shadow h-100 py-2">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                                <div class="font-weight-bold text-danger text-uppercase mb-1">Morts dans le monde</div>
+                                <div class="row no-gutters align-items-center">
+                                    <div class="col-auto">
+                                        <div id="deadWorld" class="h3 mb-0 mr-3 font-weight-bold text-gray-800"><i
+                                                class="fas fa-spinner fa-pulse"></i></div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-auto">
+                                <i class="fas fa-skull-crossbones fa-2x"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Personnes atteinte du virus dans le monde -->
+            <div class="col-xl-4 col-md-6 mb-4">
+                <div class="card border-left-warning shadow h-100 py-2">
+                    <div class="card-body">
+                        <div class="row no-gutters align-items-center">
+                            <div class="col mr-2">
+                                <div class="font-weight-bold text-warning text-uppercase mb-1">Personnes atteinte</div>
+                                <div id="casesWorld" class="h3 mb-0 font-weight-bold text-gray-800"><i
+                                        class="fas fa-spinner fa-pulse"></i></div>
+                            </div>
+                            <div class="col-auto">
+                                <i class="fas fa-clinic-medical fa-2x"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <hr>
+
+        <!-- LIVRAISONS -->
+        <div class="row">
+            <div class="alert alert-success shadow col-lg-10 offset-lg-1">
+                <h2 class="text-center">Livraisons</h2>
+                <hr>
+                <h5 class="text-center">La vente à emporter est toujours autorisée, de ce fait plusieurs restaurants
+                    restent
+                    ouverts.</h5>
+                <!-- <h4 class="text-center">Vous pouvez également commander sur ... (PUB !)</h4> -->
+
+            </div>
+        </div>
+        <!-- END LIVRAISON -->
+
+        <div class="row">
+            <div id="news" class="alert alert-info shadow col-lg-5">
+                <h5 class="text-center">Actualités en Live</h5>
+                <hr>
+                <h2 class="text-center">
+                    <a class="btn btn-dark btn-lg" target="_blank"
+                        href="https://www.lemonde.fr/planete/live/2020/03/18/coronavirus-suivez-en-direct-le-2e-jour-de-confinement-en-france-et-l-evolution-dans-le-monde_6033479_3244.html"
+                        role="button" target="_blank">Live Le monde</a>
+                </h2>
+
+                <h2 class="text-center">
+                    <a class="btn btn-primary btn-lg" target="_blank"
+                        href="https://www.20minutes.fr/sante/2742683-20200318-coronavirus-direct-deuxieme-jour-confinement-total-commence-france"
+                        role="button">Live 20 minutes</a>
+                </h2>
+
+            </div>
+            <div id="maps" class="alert alert-warning shadow col-lg-5 offset-lg-2">
+                <h5 class="text-center">Carte intéractive</h5>
+                <hr>
+                <h2 class="text-center">
+                    <a class="btn btn-warning btn-lg" target="_blank"
+                        href="https://www.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6"
+                        role="button">Carte intéractive COVID-19 MONDIAL</a>
+                </h2>
+
+                <h2 class="text-center">
+                    <a class="btn btn-primary btn-lg" target="_blank"
+                        href="https://mapthenews.maps.arcgis.com/apps/opsdashboard/index.html#/5e09dff7cb434fb194e22261689e2887"
+                        role="button">Carte intéractive COVID-19 FRANCE</a>
+                </h2>
+            </div>
+        </div>
+
+        <!-- DON -->
+        <div class="alert alert-success">
+            Vous voulez participer à la lutte contre le COVID-19 ? Soutenir une initiative locale? <br>
+            <strong>Accompagner une équipe composée de bénévoles à la protection civile et d'étudiants en pharmacie ? Alors n'attendez plus et faites un don à la hauteur de votre engagement.</strong>
+            <hr>
+            <form class="text-center" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                <input type="hidden" name="cmd" value="_s-xclick" />
+                <input type="hidden" name="hosted_button_id" value="4QXTKVR3TKTLL" />
+                <input id="donPaypal" type="image" src="https://www.paypalobjects.com/fr_FR/FR/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Bouton Faites un don avec PayPal" />
+                <img alt="" border="0" src="https://www.paypal.com/fr_FR/i/scr/pixel.gif" width="1" height="1" />
+                <br>
+                <strong id="loadDon">Ouverture de la page ...</strong>
+            </form>
+
+            <div class="text-center">
+                Vous préférez avec leetchi ?
+                <br>
+                <a class="leetchi-widget-btn" href="http://www.leetchi.com/c/france-covid19"><img src="https://asset.leetchi.com/Content/Quenette/img/culture/fr/view/wizard/embed-btn.png?v=1fbb8911e62048f08dcb0d328849ace1"></a>
+            </div>   
+        </div>
+        <!-- END DON -->
+
+    </main><!-- /.container -->
+
+    <!-- Footer -->
+    <footer class="sticky-footer">
+        <div class="container my-auto">
+            <div class="copyright text-center my-auto">
+                <span>Copyright &copy; France-Covid19 - Developed by <a
+                        href="https://www.linkedin.com/in/quentin-aslan/" target="_blank">Quentin Aslan</a></span>
+            </div>
+        </div>
+    </footer>
+    <!-- End of Footer -->
+
+    <!-- MODAL -->
+    <!-- Confinement Modal-->
+    <div class="modal fade" id="confinementModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Règles du confinement</h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <strong> déplacements sont interdits sauf dans les cas suivants et uniquement à condition d'être
+                        munis d'une attestation</strong> pour :
+
+                    <br />
+
+                    <ul>
+                        <li>Se déplacer de son domicile à son lieu de travail dès lors que le télétravail n’est pas
+                            possible ;</li>
+                        <li>Faire ses achats de première nécessité dans les commerces de proximité autorisés ;</li>
+                        <li>Se rendre auprès d’un professionnel de santé ;</li>
+                        <li>Se déplacer pour la garde de ses enfants ou pour aider les personnes vulnérables à la
+                            stricte condition de respecter les gestes barrières ;</li>
+                        <li>Faire de l’exercice physique uniquement à titre individuel, autour du domicile et sans aucun
+                            rassemblement. </li>
+                    </ul>
+
+                    <strong>Les deux documents nécessaires pour circuler sont disponibles :</strong>
+
+                    <ul>
+                        <li><strong>l'attestation individuelle</strong>, à télécharger ou à reproduire sur papier libre.
+                            Elle doit être remplie pour chaque déplacement non professionnel ;</li>
+                        <li><strong>l'attestation de l'employeur</strong>, Elle est valable pendant toute la durée des
+                            mesures de confinement et n’a donc pas à être renouvelée tous les jours.</li>
+                    </ul>
+
+                    <!-- DON -->
+                    <div class="alert alert-success">
+                        Vous voulez participer à la lutte contre le COVID-19 ? Soutenir une initiative locale? <br>
+                        <strong>Accompagner une équipe composée de bénévoles à la protection civile et d'étudiants en pharmacie ? Alors n'attendez plus et faites un don à la hauteur de votre engagement.</strong>
+                        <hr>
+                        <form class="text-center" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                            <input type="hidden" name="cmd" value="_s-xclick" />
+                            <input type="hidden" name="hosted_button_id" value="4QXTKVR3TKTLL" />
+                            <input id="donPaypal" type="image" src="https://www.paypalobjects.com/fr_FR/FR/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Bouton Faites un don avec PayPal" />
+                            <img alt="" border="0" src="https://www.paypal.com/fr_FR/i/scr/pixel.gif" width="1" height="1" />
+                            <br>
+                            <strong id="loadDon">Ouverture de la page ...</strong>
+                        </form>
+
+                        <div class="text-center">
+                            Vous préférez avec leetchi ?
+                            <br>
+                            <a class="leetchi-widget-btn" href="http://www.leetchi.com/c/france-covid19"><img src="https://asset.leetchi.com/Content/Quenette/img/culture/fr/view/wizard/embed-btn.png?v=1fbb8911e62048f08dcb0d328849ace1"></a>
+                        </div>
+                            
+                    </div>
+                    <!-- END DON -->
+
+                </div>
+                <div class="modal-footer">
+
+                    <a class="btn btn-dark shadow"
+                        href="https://www.gouvernement.fr/sites/default/files/contenu/piece-jointe/2020/03/attestation_de_deplacement_derogatoire.pdf"
+                        target="_blank">
+                        Attestation individuel
+                        <i class="fas fa-download"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Don du sang Modal-->
+    <div class="modal fade" id="donduSangModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Don du <strong class="text-danger">sang</strong></h5>
+                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">×</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <h3>Mobilisez-vous pour le don de sang, continuez à donner !</h3>
+
+
+
+                    Dans le contexte de l’épidémie de coronavirus covid-19, la collecte de sang doit<br />
+                    se poursuivre pour répondre aux besoins des patients.<br />
+                    Vous pouvez vous rendre en collecte sauf si vous présentez des symptômes grippaux.
+                    <hr />
+                    <div class="alert alert-danger">
+                        Info donneurs : dans le cadre des mesures de confinement, <br />
+                        les citoyens sont autorisés à se déplacer pour aller donner leur sang sur les sites de collecte
+                        de l’EFS, sous réserve de remplir <strong>l’attestation officielle</strong> <br />
+                        ou une déclaration sur l’honneur indiquant indiquant qu’ils vont donner leur sang, au motif de
+                        l’assistance aux personnes vulnérables.
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <a class="btn btn-danger shadow"
+                        href="https://dondesang.efs.sante.fr/"
+                        target="_blank">
+                        Redirection vers <strong>dondesang.efs.sante.fr</strong>
+                        <i class="fas fa-syringe"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END MODAL -->
+    <!-- Bootstrap core JavaScript-->
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Page level plugins -->
+    <script src="assets/vendor/chart.js/Chart.min.js"></script>
+
+    <!-- Page level custom scripts -->
+    <script src="assets/js/demo/chart-area-demo.js"></script>
+    <script src="assets/js/demo/chart-pie-demo.js"></script>
+    <script src="assets/js/pages/dashboard.js"></script>
+    <script src="assets/js/email.js"></script>
+
+</body>
+
+</html>
