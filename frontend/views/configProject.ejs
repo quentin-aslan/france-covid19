@@ -1,0 +1,91 @@
+  <!-- Page Heading -->
+  <div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800"><%= lang.ProjectTitle %></h1>
+  </div>
+  <!-- Content Row 01 -->
+  <div class="row">
+    <!-- Corp de page -->
+    <div class="col-sm col-lg-12">
+
+      <ul class="nav nav-tabs">
+        <li class="nav-item">
+          <a class="nav-link active" id="valdef-tab" data-toggle="tab" href="#valdef" role="tab" aria-controls="valdef" aria-selected="true">Valeurs par d&eacute;faut</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" id="backup-tab" data-toggle="tab" href="#backup" role="tab" aria-controls="backup" aria-selected="true">Backup/Restaure</a>
+        </li>
+
+      </ul>
+
+    <div class="tab-content" id="myTabContent">
+      <div class="tab-pane fade show active" id="valdef" role="tabpanel" aria-labelledby="valdef-tab">
+        Valeurs par d&eacute;faut du projet....
+      </div>
+      <div class="tab-pane fade" id="backup" role="tabpanel" aria-labelledby="backup">
+        Faire un backup avec la date dans le nom du fichier et crypter le fichier et un restaure ICI avec plusieurs pr&eacute;cautions.
+      </div>
+    </div>
+
+    <!-- FIN Corp de page -->
+    </div>
+
+  <!-- FIN Content Row 01 -->
+  </div>
+
+
+  <!-- Edit Modal-->
+  <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Ajout plateforme</h5>
+          <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true"><i class='fa fa-window-close' ></i></span>
+          </button>
+        </div>
+        <form id="formVLAN" method="post" enctype="multipart/form-data" />
+          <div class="modal-body">
+            <div class="form-row">
+              <div class="form-group col-md-12">
+                <label for="Name">Name</label>
+                <input type="text" class="form-control" id="Name" placeholder="Name VLAN">
+              </div>
+              <div class="form-group col-md-12">
+                <label for="Value">Value xxx</label>
+                <input type="text" class="form-control" id="value" placeholder="Value VID">
+              </div>
+
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-primary">Save</button>
+            <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- Bootstrap core JavaScript-->
+  <script src="/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+
+  <!-- Core plugin JavaScript-->
+  <script src="/vendor/jquery-easing/jquery.easing.min.js"></script>
+
+  <!-- Custom scripts for all pages-->
+  <!-- <script src="js/sb-admin-2.min.js"></script> -->
+
+  <!-- Page level plugins -->
+  <script type="text/javascript" src="/vendor/ztree/js/jquery.ztree.core.js"></script>
+  <script type="text/javascript" src="/vendor/ztree/jquery.ztree.all.js"></script>
+
+  <script>
+
+$(document).ready(function() {
+
+
+});
+
+
+  </script>

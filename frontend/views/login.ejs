@@ -1,0 +1,51 @@
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<link rel="stylesheet" href="/css/loginForm.css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="/vendor//jquery/jquery.min.js"></script>
+<link href="/css/Ox-admin-2.css" rel="stylesheet">
+<!------ Include the above in your HEAD tag ---------->
+
+<div class="wrapper fadeInDown">
+  <div id="formContent">
+    <!-- Tabs Titles -->
+
+    <!-- Icon -->
+    <div class="fadeIn first">
+      <img  width="300px" height="100px" src="/images/occitaline_logo.jpg" id="icon" alt="User Icon" />
+    </div>
+
+    <!-- Login Form -->
+    <form action="/login" method="post">
+
+      <% if(error) { %>
+        <label  class="alert alert-danger"><%= error %></label>
+      <% } %>
+
+      <input type="text" id="username" class="fadeIn second" name="username" placeholder="username" value="admin">
+      <input type="password" id="password" class="fadeIn third" name="password" placeholder="password" value="oxpasss">
+      <input type="submit" id="send" class="fadeIn fourth" value="Login">
+    </form>
+
+    <hr />
+
+    <form action="/auth/openid" method="post">
+      <div>
+          <h5>Vous êtes sur l'OxBras</h2>
+          <h3>192.168.3.222</h3>
+      </div>
+      <div>
+          <input type="submit" class="btn-lg" value="Se connecter au cluster"/>
+      </div>
+
+      <span><img style="margin-left: 0px" width="300px" height="70" src="/images/openid.png" /></span>
+  </form>
+
+    <!-- Remind Passowrd -->
+    <div id="formFooter">
+      <div><strong>JSON WEB TOKEN SECURE </strong></div>
+    
+    <strong>OpenId OxProvider - 192.168.3.224:3009</strong>
+    </div>
+
+  </div>
+</div>
