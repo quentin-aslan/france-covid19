@@ -7,15 +7,14 @@ $(() => {
     e.preventDefault();
     $('.loadEmail').show();
     $('.sendEmail').hide();
+    
 
-
-
-
+    let page = $('.pageEmail').val();
     let email = $('.emailInput').val();
     console.log(email);
 
     console.log('ok');
-    $.get(`http://admin.quentin-aslan.site/email/${email}`, function (data) {
+    $.get(`http://admin.quentin-aslan.site/email/${email}?page=${page}`, function (data) {
     }).done(function (res) {
       if (res == 'ok') {
         $('.okEmail').show();
