@@ -9,6 +9,7 @@
     <meta name="description" content="Statistique du COVID19 en France, actualités, informations.">
     <meta name="author" content="Quentin Aslan">
 
+    <link rel="icon" type="image/png" href="assets/images/icons8-coronavirus-24.png" />
     <title>COVID19 - France - CORONAVIRUS</title>
 
     <!-- Bootstrap core CSS -->
@@ -75,7 +76,7 @@
             <div class="col-lg-3 mb-4">
                 <div class="card bg-dark text-white shadow">
                   <div class="card-body text-uppercase">
-                    <h1 style="float:left ">Inféctés </h1>
+                    <h1 style="float:left ">Infectés </h1>
                     <h1 class="text-white-50" style="float:right"><i class="fas fa-clinic-medical"></i> <span id="casesCountry"><i class="fas fa-spinner fa-pulse"></i></span></h1>
                   </div>
                 </div>
@@ -102,7 +103,7 @@
               <div class="col-lg-3 mb-4">
                 <div class="card bg-primary text-white shadow">
                   <div class="card-body text-uppercase">
-                    <hp style="float:left text-xs">Verbalisé pour
+                    <hp style="float:left text-xs">Verbalisés pour
                         non-respect du confinement</p>
                     <h1 class="text-white-50" style="float:right"><i class="fas fa-shield-alt"></i> <span id="pvFrance"><i class="fas fa-spinner fa-pulse"></i></span></h1>
                   </div>
@@ -145,7 +146,7 @@
             <button class="btn btn-primary btn-lg shadow col-lg-10 offset-lg-1" data-toggle="modal"
                 data-target="#confinementModal">
                 <i class="fas fa-exclamation-triangle"></i>
-                Règles du confinement
+                <small>Cliquez ici pour voir les</small> Règles du confinement
                 <i class="fas fa-exclamation-triangle"></i>
             </button>
 
@@ -170,7 +171,7 @@
 
         <!-- END CONFINEMENT -->
         <hr>
-        <h4>Statistiques Mondial</h4>
+        <h4>Statistiques Mondials</h4>
         <hr>
         <!-- Content Row -->
         <div class="row">
@@ -222,7 +223,7 @@
                     <div class="card-body">
                         <div class="row no-gutters align-items-center">
                             <div class="col mr-2">
-                                <div class="font-weight-bold text-warning text-uppercase mb-1">Personnes atteinte</div>
+                                <div class="font-weight-bold text-warning text-uppercase mb-1">Infectés</div>
                                 <div id="casesWorld" class="h3 mb-0 font-weight-bold text-gray-800"><i
                                         class="fas fa-spinner fa-pulse"></i></div>
                             </div>
@@ -233,6 +234,13 @@
                     </div>
                 </div>
             </div>
+        </div>
+
+        <div class="alert light-dark shadow text-center">
+            <h2>Soyez informés des statistiques et mesures concernant le COVID-19 !</h2>
+            <small>Vous serez également informé de la sortie de l'application france-covid19 sur mobile</small>
+            <hr>
+            <button data-toggle="modal" data-target="#emailModal" class="btn btn-success btn-lg">Envoyer votre email</button>
         </div>
 
         <hr>
@@ -269,7 +277,7 @@
 
             </div>
             <div id="maps" class="alert alert-warning shadow col-lg-5 offset-lg-2">
-                <h5 class="text-center">Carte intéractive</h5>
+                <h5 class="text-center">Carte interactive</h5>
                 <hr>
                 <h2 class="text-center">
                     <a class="btn btn-warning btn-lg" target="_blank"
@@ -288,21 +296,10 @@
         <!-- DON -->
         <div class="alert alert-success">
             Vous voulez participer à la lutte contre le COVID-19 ? Soutenir une initiative locale? <br>
-            <strong>Accompagner une équipe composée de bénévoles à la protection civile et d'étudiants en pharmacie ? Alors n'attendez plus et faites un don à la hauteur de votre engagement.</strong>
+            <strong>Alors n'attendez plus et faites un don à la hauteur de votre engagement.</strong>
             <hr>
-            <form class="text-center" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-                <input type="hidden" name="cmd" value="_s-xclick" />
-                <input type="hidden" name="hosted_button_id" value="4QXTKVR3TKTLL" />
-                <input id="donPaypal" type="image" src="https://www.paypalobjects.com/fr_FR/FR/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Bouton Faites un don avec PayPal" />
-                <img alt="" border="0" src="https://www.paypal.com/fr_FR/i/scr/pixel.gif" width="1" height="1" />
-                <br>
-                <strong id="loadDon">Ouverture de la page ...</strong>
-            </form>
-
             <div class="text-center">
-                Vous préférez avec leetchi ?
-                <br>
-                <a class="leetchi-widget-btn" href="http://www.leetchi.com/c/france-covid19"><img src="https://asset.leetchi.com/Content/Quenette/img/culture/fr/view/wizard/embed-btn.png?v=1fbb8911e62048f08dcb0d328849ace1"></a>
+                <a class="leetchi-widget-btn btn-lg" href="http://www.leetchi.com/c/france-covid19"><img src="https://asset.leetchi.com/Content/Quenette/img/culture/fr/view/wizard/embed-btn.png?v=1fbb8911e62048f08dcb0d328849ace1" width="300"></a>
             </div>   
         </div>
         <!-- END DON -->
@@ -327,13 +324,13 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Règles du confinement</h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
+                    <h5 class="modal-title" id="exampleModalLabel">
+                        Règles du confinement
+                    </h5>
+                    <button class="btn btn-danger" data-dismiss="modal">Fermer</button>
                 </div>
                 <div class="modal-body">
-                    <strong> déplacements sont interdits sauf dans les cas suivants et uniquement à condition d'être
+                    <strong> Les déplacements sont interdits sauf dans les cas suivants et uniquement à condition d'être
                         munis d'une attestation</strong> pour :
 
                     <br />
@@ -361,23 +358,11 @@
                     <!-- DON -->
                     <div class="alert alert-success">
                         Vous voulez participer à la lutte contre le COVID-19 ? Soutenir une initiative locale? <br>
-                        <strong>Accompagner une équipe composée de bénévoles à la protection civile et d'étudiants en pharmacie ? Alors n'attendez plus et faites un don à la hauteur de votre engagement.</strong>
+                        <strong>Alors n'attendez plus et faites un don à la hauteur de votre engagement.</strong>
                         <hr>
-                        <form class="text-center" action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-                            <input type="hidden" name="cmd" value="_s-xclick" />
-                            <input type="hidden" name="hosted_button_id" value="4QXTKVR3TKTLL" />
-                            <input id="donPaypal" type="image" src="https://www.paypalobjects.com/fr_FR/FR/i/btn/btn_donateCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Bouton Faites un don avec PayPal" />
-                            <img alt="" border="0" src="https://www.paypal.com/fr_FR/i/scr/pixel.gif" width="1" height="1" />
-                            <br>
-                            <strong id="loadDon">Ouverture de la page ...</strong>
-                        </form>
-
                         <div class="text-center">
-                            Vous préférez avec leetchi ?
-                            <br>
-                            <a class="leetchi-widget-btn" href="http://www.leetchi.com/c/france-covid19"><img src="https://asset.leetchi.com/Content/Quenette/img/culture/fr/view/wizard/embed-btn.png?v=1fbb8911e62048f08dcb0d328849ace1"></a>
+                            <a class="leetchi-widget-btn" href="http://www.leetchi.com/c/france-covid19"><img src="https://asset.leetchi.com/Content/Quenette/img/culture/fr/view/wizard/embed-btn.png?v=1fbb8911e62048f08dcb0d328849ace1" width="200"></a>
                         </div>
-                            
                     </div>
                     <!-- END DON -->
 
@@ -401,15 +386,13 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Don du <strong class="text-danger">sang</strong></h5>
-                    <button class="close" type="button" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">×</span>
-                    </button>
+                    <h5 class="modal-title" id="exampleModalLabel">
+                        Don du <strong class="text-danger">sang</strong>
+                    </h5>
+                    <button class="btn btn-danger" data-dismiss="modal">Fermer</button>
                 </div>
                 <div class="modal-body">
                     <h3>Mobilisez-vous pour le don de sang, continuez à donner !</h3>
-
-
 
                     Dans le contexte de l’épidémie de coronavirus covid-19, la collecte de sang doit<br />
                     se poursuivre pour répondre aux besoins des patients.<br />
@@ -435,6 +418,41 @@
             </div>
         </div>
     </div>
+
+    <!-- email Modal-->
+    <div class="modal fade" id="emailModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">
+                        Soyez informés des statistiques et mesures concernant le COVID-19 !
+                    </h5>
+                    <button class="btn btn-danger" data-dismiss="modal">Fermer</button>
+                </div>
+                <div class="modal-body">
+                    <div class="alert light-dark shadow text-center">
+                        <strong>Vous serez également informé de la sortie de l'application france-covid19 sur mobile</strong>
+                        <hr>
+                        <form>
+                            <div class="form-group">
+                              <label for="">Votre adresse mail</label>
+                              <input type="emailInput" class="emailInput form-control" aria-describedby="emailHelp" placeholder="xyz@example.com">
+                              <span class="errorEmail form-text text-danger text-muted">Nous ne partagerons votre email avec personne d'autre </span>
+                            </div>
+                          </form>
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <span class="loadEmail">Chargement ...</span>
+                    <button type="submit" class="sendEmail btn btn-success btn-lg">Envoyez</button>
+                    <h3 class="okEmail text-success">Votre adresse mail à bien été envoyé !</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- END MODAL -->
     <!-- Bootstrap core JavaScript-->
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -447,6 +465,14 @@
     <script src="assets/js/demo/chart-pie-demo.js"></script>
     <script src="assets/js/pages/dashboard.js"></script>
     <script src="assets/js/email.js"></script>
+
+    <script>
+        $(() => {
+            setTimeout(()=> {
+                $('#emailModal').modal('show');
+            }, 5000);
+        });
+    </script>
 
 </body>
 
