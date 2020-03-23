@@ -12,14 +12,14 @@ $(() => {
     let page = $('.pageEmail').val();
     let email = $('.emailInput').val();
     console.log(email);
-
-    console.log('ok');
     $.get(`http://admin.quentin-aslan.site/email/${email}?page=${page}`, function (data) {
     }).done(function (res) {
       if (res == 'ok') {
         $('.okEmail').show();
         $('.loadEmail').hide();
         $('.errorEmail').hide();
+        // On crée un cookie pour se rappeler qu'il à déja rentrer son adresse email !
+        Cookies.set('france-covid19-email', email);
       } else {
         $('.errorEmail').show();
         $('.errorEmail').html('Vous devez rentrer une adresse email valide.')

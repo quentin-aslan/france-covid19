@@ -43,7 +43,7 @@
       </button>
 
         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-            <a class="btn btn-danger shadow" href="formulaire.html" target="_blank">
+            <a class="btn btn-success shadow" href="formulaire.html" target="_blank">
                 Avez-vous le COVID-19 ?
                 <i class="fas fa-user-nurse"></i>
             </a>
@@ -66,13 +66,33 @@
     </nav>
 
     <main role="main" class="container">
-        <div class="alert alert-danger shadow">
-            <h2 class="text-center"><span id="timerConfinement"></span></h2>
-            <hr>
-            <h5 class="text-center">Avant la fin du confinement</h5>
-
+        <div class="row d-md-none" style="margin-bottom: 5%;">
+            <a class="btn btn-success btn-lg shadow col-lg-10 offset-lg-1" href="formulaire.html" target="_blank">
+                Avez-vous le COVID-19 ?
+                <i class="fas fa-user-nurse"></i>
+            </a>
         </div>
-        <h4>Statistiques en France</h4>
+            <div class="alert alert-danger shadow">
+                <h2 class="text-center"><span id="timerConfinement"></span></h2>
+                <h5 class="text-center">Avant la fin du confinement</h5>
+    
+                <hr>
+    
+                <blockquote class="blockquote text-center">
+                    <small class="mb-0">Emmanuel Macron estime que <strong>le confinement sera </strong> "vraisemblablement" <strong>prolongé</strong></small>
+                    <footer class="blockquote-footer"><cite title="Source Title">Franceinfo</cite></footer>
+                  </blockquote>
+    
+                  <blockquote class="blockquote text-center">
+                    <small class="mb-0">Le conseil scientifique de l'état donnera son avis <strong>lundi</strong> sur le confinement</small>
+                    <footer class="blockquote-footer"><cite title="Source Title">Le Figaro</cite></footer>
+                  </blockquote>
+                    
+            </p>
+    
+            </div>
+
+        <h4>Statistiques en France - Informations mise à jours le <span id="update"></span></h4>
         <hr>
 
         <div class="row">
@@ -107,7 +127,7 @@
               <div class="col-lg-3 mb-4">
                 <div class="card bg-primary text-white shadow">
                   <div class="card-body text-uppercase">
-                    <hp style="float:left text-xs">Verbalisés pour
+                    <p style="float:left text-xs">Verbalisés pour
                         non-respect du confinement</p>
                     <h1 class="text-white-50" style="float:right"><i class="fas fa-shield-alt"></i> <span id="pvFrance"><i class="fas fa-spinner fa-pulse"></i></span></h1>
                   </div>
@@ -115,25 +135,18 @@
               </div>
         </div>
 
-        <!-- Area Chart -->
-        <div class="col-xl-6 col-lg-6 offset-lg-3">
-            <div class="card shadow mb-4">
-                <!-- Card Header - Dropdown -->
-                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                <h6 class="m-0 font-weight-bold text-primary">Nombres de cas en France depuis le début de l'épidémie</h6>
-                </div>
-                <!-- Card Body -->
-                <div class="card-body">
-                <div class="chart-area">
-                    <canvas id="myAreaChart"></canvas>
-                </div>
-                </div>
-            </div>
-            </div>
+        <!-- STATS AJD FRANCE -->
+        <div class="row">
+            <a href="statsFrance.html" class="btn btn-warning btn-lg shadow col-lg-10 offset-lg-1">
+                <small>Cliquez ici pour voir les</small> <br >
+                Statistiques détaillées
+            </a>
+        </div>
 
         <hr>
-        <div class="row">
 
+        <!-- FORMULAIRE SYMPTOME -->
+        <div class="row">
             <div class="alert alert-dark shadow col-lg-10 offset-lg-1 text-center ">
                 <a class="btn btn-danger btn-lg shadow" href="formulaire.html" target="_blank">
                     Avez-vous le COVID-19 ?
@@ -150,32 +163,31 @@
             <button class="btn btn-primary btn-lg shadow col-lg-10 offset-lg-1" data-toggle="modal"
                 data-target="#confinementModal">
                 <i class="fas fa-exclamation-triangle"></i>
-                <small>Cliquez ici pour voir les</small> Règles du confinement
+                <small>Cliquez ici pour voir les</small> <br >Règles du confinement
                 <i class="fas fa-exclamation-triangle"></i>
             </button>
 
         </div>
 
         <hr>
+
+        <!-- GESTES BARRIERE -->
         <div class="row">
 
-            <div class="alert alert-danger shadow text-center col-lg-10 offset-lg-1">
-                <h2>Don du <strong class="text-danger">sang</strong></h2>
+            <div id="gestesBarriere" class="alert alert-danger shadow text-center col-lg-10 offset-lg-1">
+                <h2>5 GESTES "BARRIÈRE"</h2>
                 <hr>
-                <h5>Les citoyens sont <strong>AUTORISÉS</strong> à se déplacer pour aller <strong class="text-danger">donner
-                        leur sang</strong> sur les sites de collecte de l'EFS</h5>
+                <h5>Face aux infections, il existe des gestes simples pour préserver votre santé et celle de votre entourage</h5>
                 <button class="btn btn-danger btn-lg shadow col-lg-6" data-toggle="modal"
-                    data-target="#donduSangModal">
-                    <i class="fas fa-exclamation-triangle"></i>
+                    data-target="#gestesModal">
                         Se renseigner !
-                    <i class="fas fa-exclamation-triangle"></i>
                 </button>
             </div>
         </div>
 
         <!-- END CONFINEMENT -->
         <hr>
-        <h4>Statistiques Mondials</h4>
+        <h4 id="statsMondiales">Statistiques Mondiales</h4>
         <hr>
         <!-- Content Row -->
         <div class="row">
@@ -240,48 +252,50 @@
             </div>
         </div>
 
-        <div class="alert light-dark shadow text-center">
-            <h2>Soyez informés des statistiques et mesures concernant le COVID-19 !</h2>
-            <small>Vous serez également informé de la sortie de l'application france-covid19 sur mobile</small>
-            <hr>
-            <button data-toggle="modal" data-target="#emailModal" class="btn btn-success btn-lg">Envoyer votre email</button>
+        <div class="row">
+
+            <div class="alert alert-danger shadow text-center col-lg-10 offset-lg-1">
+                <h2>Don du <strong class="text-danger">sang</strong></h2>
+                <hr>
+                <h5>Les citoyens sont <strong>AUTORISÉS</strong> à se déplacer pour aller <strong class="text-danger">donner
+                        leur sang</strong> sur les sites de collecte de l'EFS</h5>
+                <button class="btn btn-danger btn-lg shadow col-lg-6" data-toggle="modal"
+                    data-target="#donduSangModal">
+                    <i class="fas fa-exclamation-triangle"></i>
+                        Se renseigner !
+                    <i class="fas fa-exclamation-triangle"></i>
+                </button>
+            </div>
         </div>
+
+
 
         <hr>
 
         <!-- LIVRAISONS -->
-        <div class="row">
+        <!-- <div class="row">
             <div class="alert alert-success shadow col-lg-10 offset-lg-1">
                 <h2 class="text-center">Livraisons</h2>
                 <hr>
                 <h5 class="text-center">La vente à emporter est toujours autorisée, de ce fait plusieurs restaurants
                     restent
                     ouverts.</h5>
-                <!-- <h4 class="text-center">Vous pouvez également commander sur ... (PUB !)</h4> -->
 
             </div>
-        </div>
+        </div> -->
         <!-- END LIVRAISON -->
 
         <div class="row">
-            <div id="news" class="alert alert-info shadow col-lg-5">
-                <h5 class="text-center">Actualités en Live</h5>
+
+            <div class="alert light-dark shadow text-center col-lg-5">
+                <h2>Soyez informés des statistiques et mesures concernant le COVID-19 !</h2>
+                <small>Vous serez également informé de la sortie de l'application france-covid19 sur mobile</small>
                 <hr>
-                <h2 class="text-center">
-                    <a class="btn btn-dark btn-lg" target="_blank"
-                        href="https://www.lemonde.fr/planete/live/2020/03/18/coronavirus-suivez-en-direct-le-2e-jour-de-confinement-en-france-et-l-evolution-dans-le-monde_6033479_3244.html"
-                        role="button" target="_blank">Live Le monde</a>
-                </h2>
-
-                <h2 class="text-center">
-                    <a class="btn btn-primary btn-lg" target="_blank"
-                        href="https://www.20minutes.fr/sante/2742683-20200318-coronavirus-direct-deuxieme-jour-confinement-total-commence-france"
-                        role="button">Live 20 minutes</a>
-                </h2>
-
+                <button data-toggle="modal" data-target="#emailModal" class="btn btn-success btn-lg">Envoyer votre email</button>
             </div>
+
             <div id="maps" class="alert alert-warning shadow col-lg-5 offset-lg-2">
-                <h5 class="text-center">Carte interactive</h5>
+                <h5 class="text-center">Carte intéractive</h5>
                 <hr>
                 <h2 class="text-center">
                     <a class="btn btn-warning btn-lg" target="_blank"
@@ -311,15 +325,15 @@
 
     </main><!-- /.container -->
 
-    <!-- Footer -->
-    <footer class="sticky-footer">
-        <div class="container my-auto">
-            <div class="copyright text-center my-auto">
-                <span>Copyright &copy; France-Covid19 - Developed by <a
-                        href="https://www.linkedin.com/in/quentin-aslan/" target="_blank">Quentin Aslan</a></span>
+        <!-- Footer -->
+        <footer class="sticky-footer">
+            <div class="container my-auto">
+                <div class="copyright text-center my-auto">
+                    <span>Copyright &copy; France-Covid19 - Developed by 
+                        <strong><a href="https://www.linkedin.com/in/quentin-aslan/" target="_blank">Quentin Aslan</a></strong> | Community manager<strong> Christian Effi</strong></span>
+                </div>
             </div>
-        </div>
-    </footer>
+        </footer>
     <!-- End of Footer -->
 
     <!-- MODAL -->
@@ -386,6 +400,52 @@
         </div>
     </div>
 
+
+    <!-- Geste barrière Modal-->
+    <div class="modal fade" id="gestesModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">
+                        5 GESTES "BARRIÈRE"
+                    </h5>
+                    <button class="btn btn-danger" data-dismiss="modal">Fermer</button>
+                </div>
+                <div class="modal-body">
+                    
+                    <p class="text-center">
+                        <img src="assets/images/gestesMain.gif" alt="5 gestes barrières" />
+                    </p>
+
+                    <p>
+                        Face aux infections, il existe des <strong>gestes simples pour préserver votre santé et celle de votre entourage :</strong>
+                    </p>
+
+                    <ul>
+                        <li>Se laver les mains très régulièrement</li>
+                        <li>Tousser ou éternuer dans son coude ou dans un mouchoir</li>
+                        <li>Saluer sans se serrer la main, éviter les embrassades</li>
+                        <li>Utiliser des mouchoirs à usage unique et les jeter</li>
+                        <li>Eviter les rassemblements, limiter les déplacements et les contacts</li>
+                    </ul>
+                    <div class="alert alert-danger">
+                        J’ai des symptômes (toux, fièvre) qui me font penser au COVID-19 : je reste à domicile, j’évite les contacts, j’appelle un médecin avant de me rendre à son cabinet ou j’appelle le numéro de permanence de soins de ma région. Je peux également bénéficier d’une téléconsultation.
+                    </div>
+
+                </div>
+                <div class="modal-footer">
+                    <a class="btn btn-primary shadow"
+                        href="https://www.gouvernement.fr/info-coronavirus"
+                        target="_blank">
+                        Redirection vers <strong>gouvernement.fr/info-coronavirus</strong>
+                        <i class="fas fa-shield-alt"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Don du sang Modal-->
     <div class="modal fade" id="donduSangModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
@@ -446,7 +506,6 @@
                               <input type="emailInput" class="emailInput form-control" aria-describedby="emailHelp" placeholder="xyz@example.com">
                               <span class="errorEmail form-text text-danger text-muted">Nous ne partagerons votre email avec personne d'autre </span>
                             </div>
-                          </form>
                     </div>
 
                 </div>
@@ -455,6 +514,7 @@
                     <input type="hidden" class="pageEmail" value="newsletter">
                     <button type="submit" class="sendEmail btn btn-success btn-lg">Envoyez</button>
                     <h3 class="okEmail text-success">Votre adresse mail à bien été envoyé !</h3>
+                    </form>
                 </div>
             </div>
         </div>
@@ -466,20 +526,11 @@
 
     <!-- Page level plugins -->
     <script src="assets/vendor/chart.js/Chart.min.js"></script>
-
+    <script src="assets/js/js-cookie.js"></script>
     <!-- Page level custom scripts -->
     <script src="assets/js/demo/chart-area-demo.js"></script>
-    <script src="assets/js/demo/chart-pie-demo.js"></script>
     <script src="assets/js/pages/dashboard.js"></script>
     <script src="assets/js/email.js"></script>
-
-    <script>
-        $(() => {
-            setTimeout(()=> {
-                $('#emailModal').modal('show');
-            }, 5000);
-        });
-    </script>
 
 </body>
 

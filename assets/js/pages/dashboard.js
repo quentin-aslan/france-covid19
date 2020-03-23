@@ -1,5 +1,14 @@
 $(() => {
 
+    // Popup email
+    console.log(Cookies.get());
+        let emailCookie = Cookies.get('france-covid19-email');
+        console.log(emailCookie);
+        if(!emailCookie) {
+            setTimeout(()=> {
+                // $('#emailModal').modal('show');
+            }, 5000);
+        } 
     // --- DANS LE MONDE ----
 
     let date1 = new Date();
@@ -33,6 +42,13 @@ $(() => {
             $('#recoveredWorld').html(json.recovered);
             $('#deadWorld').html(json.deaths);
             $('#casesWorld').html(json.cases);
+
+            // Mise date de mise à jours des informations
+            let date = new Date(json.updated);
+            console.log(date);
+            let dateStr = date.toLocaleDateString('fr-FR');
+            $('#update').html(dateStr);
+
         }
     });
 
@@ -49,7 +65,10 @@ $(() => {
     });
 
 
-    $('#pvFrance').html('4 095'); // 19/03/20
+    // $('#pvFrance').html('4 095'); // 19/03/20
+    // $('#pvFrance').html('38 994'); // 22/03/2020
+    $('#pvFrance').html('91 824'); // 23/03/2020
+    
 
 })
 

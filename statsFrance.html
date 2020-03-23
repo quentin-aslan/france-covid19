@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="fr">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="keyword" content="Covid19 France Coronavirus Statistique">
+    <meta name="description" content="Statistique du COVID19 en France, actualités, informations.">
+    <meta name="author" content="Quentin Aslan">
+    <link rel="icon" type="image/png" href="assets/images/icons8-coronavirus-24.png" />
+    <title>COVID19 - France - CORONAVIRUS</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <script src="assets/vendor/jquery/jquery.min.js"></script>
+
+    <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
+    <link href="assets/css/sb-admin-perso.css" rel="stylesheet">
+
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161216131-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-161216131-1');
+    </script>
+
+
+</head>
+
+<body>
+
+    <!-- MENU PAGE SECONDAIRE -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+        <!-- Bouton important pour les pages secondaires, permet de retourner sur la page principal du site rapidement ! -->
+        <a class="navbar-brand btn btn-danger shadow" href="index.html">Retour</a>
+        <!-- Permet d'afficher le menu sur mobile (Needs Bootstrap bundle) -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
+            aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Menu à gauche -->
+        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+            <ul class="navbar-nav ml-auto">
+
+                <li>
+                    <span class="text-light font-weight-ligh text-xs nav-link"><i class="fas fa-phone-volume"></i>
+                        Numéro vert gratuit 24h/7j</span>
+                </li>
+                <li class="nav-item  active ">
+                    <a class="nav-link font-weight-bold" href="tel:0800130000">0 800 130 000<span
+                            class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- END MENU PAGE SECONDAIRE -->
+
+    <main role="main" class="container">
+
+        <h4>Aujourd'hui en France - <strong>Acutalisation</strong> tout les jours <strong>à 13h & 20H</strong>.</h4>
+        <hr>
+
+        <div class="row">
+
+            <div class="col-lg-6 mb-4">
+                <div class="card bg-dark text-white shadow">
+                  <div class="card-body text-uppercase">
+                    <h1 style="float:left ">Nouveaux cas</h1>
+                    <h1 class="text-white-50" style="float:right"><i class="fas fa-clinic-medical"></i> <span id="casesCountryDay"><i class="fas fa-spinner fa-pulse"></i></span></h1>
+                  </div>
+                </div>
+              </div>
+              <div class="col-lg-6 mb-4">
+                <div class="card bg-secondary text-white shadow">
+                  <div class="card-body text-uppercase">
+                    <h1 style="float:left">Nouveaux décès</h1>
+                    <h1 class="text-white-50" style="float:right"><i class="fas fa-skull-crossbones"></i> <span id="deadCountryday"><i class="fas fa-spinner fa-pulse"></i></span></h1>
+                  </div>
+                </div>
+              </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="col-lg-6 mb-4">
+                <div class="card bg-danger text-white shadow">
+                  <div class="card-body text-uppercase">
+                    <h2 style="float:left ">Cas critiques </h1> <br>
+                    <h1 class="text-white-50" style="float:right"><i class="far fa-frown"></i> <span id="criticalCountry"><i class="fas fa-spinner fa-pulse"></i></span></h1>
+                  </div>
+                </div>
+              </div>
+
+              <div class="col-lg-6 mb-4">
+                <div class="card bg-info text-white shadow">
+                  <div class="card-body text-uppercase">
+                    <p style="float:left">Nombre d'inféctés pour 1 million de personnes</p>
+                    <h1 class="text-white-50" style="float:right"><i class="fas fa-chart-line"></i> <span id="oneMillionCountry"><i class="fas fa-spinner fa-pulse"></i></span></h1>
+                  </div>
+                </div>
+              </div>               
+
+        </div>
+
+        <div class="row">
+
+        <!-- Area Chart -->
+        <div class="col-xl-6 col-lg-6 offset-lg-3">
+            <div class="card shadow mb-4">
+                <!-- Card Header - Dropdown -->
+                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
+                <h6 class="m-0 font-weight-bold text-primary">Nombres de cas et morts en France depuis le début de l'épidémie</h6>
+                </div>
+                <!-- Card Body -->
+                <div class="card-body">
+                <div class="chart-area">
+                    <canvas id="myAreaChart"></canvas>
+                </div>
+                </div>
+
+                <div class="card-footer text-center">
+                    <span class="text-danger">Morts</span> |
+                    <span class="text-warning">Infectés</span>
+                </div>
+            </div>
+        </div>
+
+        </div>
+
+        <div class="row">
+
+            <div class="alert alert-primary shadow text-center col-lg-5">
+                <h2>Non respect du confinement</h2>
+                <hr>
+                <h5>Enfreindre les règles de confinement est passible d'une amende de</h5>
+                <h2><i class="fas fa-exclamation-triangle"></i>   135 €   <i class="fas fa-exclamation-triangle"></i></h2>
+                <br>
+                <h5>Pouvant être portée à <strong>375 €</strong></h5>
+                <img src="assets/images/statsAmendes.jfif" alt="">
+            </div>
+
+            <div class="alert light-dark shadow text-center col-lg-5 offset-lg-2">
+                <h2>Soyez informés des statistiques et mesures concernant le COVID-19 !</h2>
+                <small>Vous serez également informé de la sortie de l'application france-covid19 sur mobile</small>
+                <hr>
+                <div class="form-group">
+                    <label for="">Votre adresse mail</label>
+                    <input type="emailInput" class="emailInput form-control" aria-describedby="emailHelp"
+                        placeholder="xyz@example.com">
+                    <span class="errorEmail form-text text-danger text-muted">Nous ne partegerons votre email avec
+                        personne d'autre </span>
+                </div>
+                <input type="hidden" class="pageEmail" value="newsletter">
+                <span class="loadEmail">Chargement ...</span>
+                <button type="submit" class="sendEmail btn btn-success btn-lg">Envoyez</button>
+                <h3 class="okEmail text-success">Votre adresse mail à bien été envoyé !</h3>
+                </form>
+            </div>
+
+        </div>
+
+
+
+        <!-- Footer -->
+        <footer class="sticky-footer">
+            <div class="container my-auto">
+                <div class="copyright text-center my-auto">
+                    <span>Copyright &copy; France-Covid19 - Developed by 
+                        <strong><a href="https://www.linkedin.com/in/quentin-aslan/" target="_blank">Quentin Aslan</a></strong> | Communication Manager<strong> Christian Effi</strong></span>
+                </div>
+            </div>
+        </footer>
+        <!-- End of Footer -->
+    </main><!-- /.container -->
+
+    <!-- Bootstrap core JavaScript-->
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom scripts for all pages-->
+    <script src="assets/js/sb-admin-2.min.js"></script>
+    <script src="assets/vendor/chart.js/Chart.min.js"></script>
+    <!-- <script src="assets/js/pages/dashboard.js"></script> -->
+    <script src="assets/js/email.js"></script>
+    <script src="assets/js/demo/chart-area-demo.js"></script>
+    <script src="assets/js/statsFrance.js"></script>
+
+</body>
+
+</html>
