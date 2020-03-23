@@ -3,6 +3,13 @@ $('.loadEmail').hide();
 $('.okEmail').hide();
 $('.loadDon').hide();
 $(() => {
+
+
+  $('#stopEmail').click((e) => {
+      e.preventDefault();
+        document.location.href="addEmail.php?email=none";
+  });
+
   $('.sendEmail').click((e) => {
     e.preventDefault();
     $('.loadEmail').show();
@@ -11,7 +18,6 @@ $(() => {
 
     let page = $('.pageEmail').val();
     let email = $('.emailInput').val();
-    console.log(email);
     $.get(`http://admin.quentin-aslan.site/email/${email}?page=${page}`, function (data) {
     }).done(function (res) {
       if (res == 'ok') {
@@ -19,7 +25,7 @@ $(() => {
         $('.loadEmail').hide();
         $('.errorEmail').hide();
         // On crée un cookie pour se rappeler qu'il à déja rentrer son adresse email !
-        Cookies.set('france-covid19-email', email);
+        document.location.href="addEmail.php?email="+email;
       } else {
         $('.errorEmail').show();
         $('.errorEmail').html('Vous devez rentrer une adresse email valide.')

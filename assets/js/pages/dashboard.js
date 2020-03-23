@@ -1,14 +1,4 @@
 $(() => {
-
-    // Popup email
-    console.log(Cookies.get());
-        let emailCookie = Cookies.get('france-covid19-email');
-        console.log(emailCookie);
-        if(!emailCookie) {
-            setTimeout(()=> {
-                // $('#emailModal').modal('show');
-            }, 5000);
-        } 
     // --- DANS LE MONDE ----
 
     let date1 = new Date();
@@ -45,14 +35,14 @@ $(() => {
 
             // Mise date de mise à jours des informations
             let date = new Date(json.updated);
-            console.log(date);
+            console.log(json);
             let dateStr = date.toLocaleDateString('fr-FR');
             $('#update').html(dateStr);
 
         }
     });
 
-    // FRANCE
+    // // FRANCE
     $.ajax({
         url: 'https://corona.lmao.ninja/countries/france',
         type: 'GET',
@@ -67,7 +57,8 @@ $(() => {
 
     // $('#pvFrance').html('4 095'); // 19/03/20
     // $('#pvFrance').html('38 994'); // 22/03/2020
-    $('#pvFrance').html('91 824'); // 23/03/2020
+    // $('#pvFrance').html('91 824'); // 23/03/2020
+    $('#pvFrance').html('110 000'); // 24/03/2020
     
 
 })

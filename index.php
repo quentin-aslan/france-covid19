@@ -1,56 +1,25 @@
 <!doctype html>
 <html lang="fr">
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="keyword" content="Covid19 France Coronavirus Statistique">
-    <meta name="description" content="Statistique du COVID19 en France, actualités, informations.">
-    <meta name="author" content="Quentin Aslan">
-
-    <link rel="icon" type="image/png" href="assets/images/icons8-coronavirus-24.png" />
-    <title>COVID19 - France - CORONAVIRUS</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <script src="assets/vendor/jquery/jquery.min.js"></script>
-
-    <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link href="assets/css/sb-admin-perso.css" rel="stylesheet">
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161216131-1"></script>
-    <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'UA-161216131-1');
-    </script>
-
-    <!-- ADSENSE -->
-    <script data-ad-client="ca-pub-1922204380394243" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-</head>
+<?php require_once('partials/head.php'); ?>
 
 <body>
 
     <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-        <a class="navbar-brand" href="index.html">COVID-19 - France</a>
+        <a class="navbar-brand" href="index.php">COVID-19 - France</a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
 
         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-            <a class="btn btn-success shadow" href="formulaire.html" target="_blank">
+            <a class="btn btn-success shadow" href="formulaire.php" target="_blank">
                 Avez-vous le COVID-19 ?
                 <i class="fas fa-user-nurse"></i>
             </a>
             <ul class="navbar-nav ml-auto">
 
                 <li>
-                    <a target="_blank" href="projet.html" class="btn btn-primary">Comprendre le projet</a>
+                    <a target="_blank" href="projet.php" class="btn btn-primary">Comprendre le projet</a>
                 </li>
 
                 <li>
@@ -67,7 +36,7 @@
 
     <main role="main" class="container">
         <div class="row d-md-none" style="margin-bottom: 5%;">
-            <a class="btn btn-success btn-lg shadow col-lg-10 offset-lg-1" href="formulaire.html" target="_blank">
+            <a class="btn btn-success btn-lg shadow col-lg-10 offset-lg-1" href="formulaire.php" target="_blank">
                 Avez-vous le COVID-19 ?
                 <i class="fas fa-user-nurse"></i>
             </a>
@@ -84,7 +53,7 @@
                   </blockquote>
     
                   <blockquote class="blockquote text-center">
-                    <small class="mb-0">Le conseil scientifique de l'état donnera son avis <strong>lundi</strong> sur le confinement</small>
+                    <small class="mb-0">Le conseil scientifique de l'état donnera son avis <strong>mardi</strong> sur le confinement</small>
                     <footer class="blockquote-footer"><cite title="Source Title">Le Figaro</cite></footer>
                   </blockquote>
                     
@@ -137,7 +106,7 @@
 
         <!-- STATS AJD FRANCE -->
         <div class="row">
-            <a href="statsFrance.html" class="btn btn-warning btn-lg shadow col-lg-10 offset-lg-1">
+            <a href="statsFrance.php" class="btn btn-warning btn-lg shadow col-lg-10 offset-lg-1">
                 <small>Cliquez ici pour voir les</small> <br >
                 Statistiques détaillées
             </a>
@@ -148,7 +117,7 @@
         <!-- FORMULAIRE SYMPTOME -->
         <div class="row">
             <div class="alert alert-dark shadow col-lg-10 offset-lg-1 text-center ">
-                <a class="btn btn-danger btn-lg shadow" href="formulaire.html" target="_blank">
+                <a class="btn btn-danger btn-lg shadow" href="formulaire.php" target="_blank">
                     Avez-vous le COVID-19 ?
                     <i class="fas fa-user-nurse"></i>
                 </a>
@@ -318,22 +287,15 @@
             <hr>
             <div class="text-center">
                 <a class="btn btn-success" href="http://www.leetchi.com/c/france-covid19" >Je participe !</a>
-                <a href="projet.html" class="btn btn-dark">Comprendre le projet</a>
+                <a href="projet.php" class="btn btn-dark">Comprendre le projet</a>
             </div>   
         </div>
         <!-- END DON -->
 
     </main><!-- /.container -->
 
-        <!-- Footer -->
-        <footer class="sticky-footer">
-            <div class="container my-auto">
-                <div class="copyright text-center my-auto">
-                    <span>Copyright &copy; France-Covid19 - Developed by 
-                        <strong><a href="https://www.linkedin.com/in/quentin-aslan/" target="_blank">Quentin Aslan</a></strong> | Community manager<strong> Christian Effi</strong></span>
-                </div>
-            </div>
-        </footer>
+    <!-- Footer -->
+    <?php require_once('partials/footer.php'); ?>
     <!-- End of Footer -->
 
     <!-- MODAL -->
@@ -381,7 +343,7 @@
                         <hr>
                         <div class="text-center">
                             <a class="btn btn-success" href="http://www.leetchi.com/c/france-covid19" >Je participe !</a>
-                            <a href="projet.html" class="btn btn-dark">Comprendre le projet</a>
+                            <a href="projet.php" class="btn btn-dark">Comprendre le projet</a>
                         </div>
                     </div>
                     <!-- END DON -->
@@ -508,8 +470,14 @@
                             </div>
                     </div>
 
+                    <div class="alert alert-info">
+                        <small class="form-text text-danger text-muted">Nous ne vous reposerons pas la question si vous nous envoyez votre email ou que vous cliquez sur "Ne plus me demander"</small>
+                    </div>
+
                 </div>
+                
                 <div class="modal-footer">
+                <button type="button" class="btn btn-secondary mr-auto" id="stopEmail">Ne plus me demander</button>
                     <span class="loadEmail">Chargement ...</span>
                     <input type="hidden" class="pageEmail" value="newsletter">
                     <button type="submit" class="sendEmail btn btn-success btn-lg">Envoyez</button>
@@ -526,11 +494,28 @@
 
     <!-- Page level plugins -->
     <script src="assets/vendor/chart.js/Chart.min.js"></script>
-    <script src="assets/js/js-cookie.js"></script>
     <!-- Page level custom scripts -->
     <script src="assets/js/demo/chart-area-demo.js"></script>
     <script src="assets/js/pages/dashboard.js"></script>
     <script src="assets/js/email.js"></script>
+
+    <?php
+    /**
+     * Si l'utilisateur à déja rentrer son email alors on ne lui redemande pas
+     */
+
+     if(!isset($_COOKIE['france-covid19-email'])) { ?>
+
+        <script>
+            $(() => {
+                // Popup email
+                setTimeout(()=> {
+                    $('#emailModal').modal('show');
+                }, 5000);
+            });
+        </script>
+
+     <?php } ?>
 
 </body>
 

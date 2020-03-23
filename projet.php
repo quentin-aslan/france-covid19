@@ -1,62 +1,11 @@
 <!doctype html>
 <html lang="fr">
 
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="keyword" content="Covid19 France Coronavirus Statistique">
-    <meta name="description" content="Statistique du COVID19 en France, actualités, informations.">
-    <meta name="author" content="Quentin Aslan">
-    <link rel="icon" type="image/png" href="assets/images/icons8-coronavirus-24.png" />
-    <title>COVID19 - France - CORONAVIRUS</title>
-
-    <!-- Bootstrap core CSS -->
-    <link href="assets/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="assets/css/style.css">
-    <script src="assets/vendor/jquery/jquery.min.js"></script>
-
-    <link href="assets/vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link href="assets/css/sb-admin-perso.css" rel="stylesheet">
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-161216131-1"></script>
-    <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-
-        gtag('config', 'UA-161216131-1');
-    </script>
-
- <!-- ADSENSE -->
- <script data-ad-client="ca-pub-1922204380394243" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-
-</head>
+<?php require_once('partials/head.php'); ?>
 
 <body>
 
-    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-        <a class="navbar-brand btn btn-danger shadow" href="index.html">Retour</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
-            aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-
-        <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-            <ul class="navbar-nav ml-auto">
-
-                <li>
-                    <span class="text-light font-weight-ligh text-xs nav-link"><i class="fas fa-phone-volume"></i>
-                        Numéro vert gratuit 24h/7j</span>
-                </li>
-                <li class="nav-item  active ">
-                    <a class="nav-link font-weight-bold" href="tel:0800130000">0 800 130 000<span
-                            class="sr-only">(current)</span></a>
-                </li>
-            </ul>
-        </div>
-    </nav>
+    <?php require_once('partials/navSecondary.php'); ?>
 
     <main role="main" class="container">
 
@@ -71,7 +20,7 @@
                         L’expansion du virus et la mise en place de politiques restrictives comme <strong>le confinement</strong> a profondément perturbé notre quotidien et celui de nos familles. 
                     </p>
                     <p>
-                        Cependant, pour un retour rapide à la normale, pour alléger les hôpitaux, nos parents, amis et frères personnels soignants, <strong>il faut que la partie civile se mobilise elle aussi. </strong>
+                        Cependant, pour un retour rapide à la normale, pour alléger les hôpitaux, nos parents, amis et personnels soignants, <strong>il faut que la partie civile se mobilise elle aussi. </strong>
                             
                         Nous avons décidé de créer ce site internet pour mutualiser un certain nombre de compétences autant sur le domaine informatique que sur celui de la santé. 
                     </p>
@@ -81,14 +30,18 @@
                         <br>
 
                     </p>
-
                     <p>
+
                         Pour tenter de l’atteindre, nous proposons en plus du questionnaire sur les symptômes <strong class="text-danger">un service d’écoute</strong> ne remplaçant en aucun cas les conseils d’un médecin mais qui <strong class="text-danger">délivré par des
                             étudiants en pharmacie permet d’avoir un certain suivi en attendant que les médecins généralistes débordés ou les urgentistes puissent vous répondre.</strong>
                     </p>
 
                     <p>
-                        De plus, nous souhaitons mettre en place une application pour faciliter l’accès aux informations et au questionnaire à un plus grand nombre de personnes tout en développant un certain nombre de services d’aides pour les personnes âgées et les malades réalisables. Pour mener à bien toutes ces idées, nous avons besoin de votre soutien, et surtout de vos dons pour ouvrir une plateforme de liaison sur smartphones. 
+                        De plus, nous souhaitons mettre en place une application pour faciliter l’accès aux informations et au questionnaire à un plus grand nombre de personnes tout en développant un certain nombre de services d’aides pour les personnes âgées et les malades réalisables. Pour mener à bien toutes ces idées, nous avons besoin de votre soutien.
+                    </p>
+
+                    <p>
+                    En effet, une partie de ces dons servira à remplir <strong> les frais du site internet et à mettre en ligne l'application</strong> que nous développons en ce moment. et une autre partie sera <strong>reversée aux personnels soignant.</strong> 
                         <strong class="text-success"> Alors si vous souhaitez participer à la lutte contre le COVID-19 et soutenir cette initiative civile, <a class="btn btn-success" href="http://www.leetchi.com/c/france-covid19" target="_blank">faites un don… !</a></strong>
                     </p>
 
@@ -124,16 +77,9 @@
 
 
 
-        <!-- Footer -->
-        <footer class="sticky-footer">
-            <div class="container my-auto">
-                <div class="copyright text-center my-auto">
-                    <span>Copyright &copy; France-Covid19 - Developed by 
-                        <strong><a href="https://www.linkedin.com/in/quentin-aslan/" target="_blank">Quentin Aslan</a></strong> | Communication Manager<strong> Christian Effi</strong></span>
-                </div>
-            </div>
-        </footer>
-        <!-- End of Footer -->
+    <!-- Footer -->
+    <?php require_once('partials/footer.php'); ?>
+    <!-- End of Footer -->
     </main><!-- /.container -->
 
     <!-- Bootstrap core JavaScript-->
