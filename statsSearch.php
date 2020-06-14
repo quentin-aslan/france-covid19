@@ -118,27 +118,6 @@
 
         </div>
 
-        <div class="row">
-
-            <div class="alert light-dark shadow text-center col-lg-12">
-                <h2>Soyez informés des statistiques et mesures concernant le COVID-19 !</h2>
-                <small>Vous serez également informé de la sortie de l'application france-covid19 sur mobile</small>
-                <hr>
-                <div class="form-group">
-                    <label for="">Votre adresse mail</label>
-                    <input type="emailInput" class="emailInput form-control" aria-describedby="emailHelp"
-                        placeholder="xyz@example.com">
-                    <span class="errorEmail form-text text-danger text-muted">Nous ne partegerons votre email avec
-                        personne d'autre </span>
-                </div>
-                <input type="hidden" class="pageEmail" value="newsletter">
-                <span class="loadEmail">Chargement ...</span>
-                <button type="submit" class="sendEmail btn btn-success btn-lg">Envoyez</button>
-                <h3 class="okEmail text-success">Votre adresse mail à bien été envoyé !</h3>
-            </div>
-
-        </div>
-
         <!-- Footer -->
         <?php require_once('partials/footer.php'); ?>
         <!-- End of Footer -->
@@ -148,20 +127,9 @@
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
     <!-- Custom scripts for all pages-->
     <script src="assets/js/sb-admin-2.min.js"></script>
-    <script src="assets/vendor/chart.js/Chart.min.js"></script>
-    <!-- <script src="assets/js/pages/dashboard.js"></script> -->
 
   <script src="assets/js/jquery-ui/jquery-ui.min.js"></script>
-
-    <script src="assets/js/email.js"></script>
-    <script src="assets/js/statsSearch.js"></script>
-
-    <?php
-
-    if(isset($_GET['country'])) {
-        echo $_GET['country'];
-    }
-    ?>
+  <script src="assets/js/statsSearch.js"></script>
 
 
 </body>
