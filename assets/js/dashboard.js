@@ -159,14 +159,14 @@ $(() => {
     let date2 = new Date('2020/05/11 00:00:00');
     let diff = dateDiff(date1, date2);
     let dateStr = date2.toLocaleDateString('fr-FR');
-    $('#timerConfinement').html(`${diff.day} Jours, ${diff.hour} Heures, ${diff.min} Min, ${diff.sec} Secondes`);
+    $('#timerConfinement').html(`${diff.day.toString().split('-')[1]} Jours, ${diff.hour.toString().split('-')[1]} Heures, ${diff.min.toString().split('-')[1]} Min, ${diff.sec.toString().split('-')[1]} Secondes`);
 
     setInterval(() => {
         date1 = new Date();
         date2 = new Date('2020/05/11 00:00:00');
         diff = dateDiff(date1, date2);
         dateStr = date2.toLocaleDateString('fr-FR');
-        $('#timerConfinement').html(`${diff.day} Jours, ${diff.hour} Heures, ${diff.min} Min, ${diff.sec} Secondes`);
+        $('#timerConfinement').html(`${diff.day.toString().split('-')[1]} Jours, ${diff.hour.toString().split('-')[1]} Heures, ${diff.min.toString().split('-')[1]} Min, ${diff.sec.toString().split('-')[1]} Secondes`);
     }, 1000);
 
     // EN ATTENDANT l'ACTUALISATION

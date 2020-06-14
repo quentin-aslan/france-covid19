@@ -3,7 +3,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="keyword" content="Covid19 France Coronavirus Statistique">
-    <meta name="description" content="Statistique du COVID19 en France, actualités, informations.">
+    <meta name="description" content="Statistique du COVID19 en France et dans le monde">
     <meta name="author" content="Quentin Aslan">
 
     <link rel="icon" type="image/png" href="assets/images/icons8-coronavirus-24.png" />
