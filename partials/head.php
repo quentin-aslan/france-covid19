@@ -29,4 +29,5 @@
 
     <!-- ADSENSE -->
     <script data-ad-client="ca-pub-1922204380394243" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    <script src="assets/js/Tools.js"></script>
 </head>

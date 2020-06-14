@@ -8,9 +8,23 @@
 
 
 $email = $_GET['email'];
-echo $email;
 
-setcookie( "france-covid19-email", $email, strtotime( '+30 days' ) );
+if (!empty($email) && (filter_var($email, FILTER_VALIDATE_EMAIL) || $email == 'none')) {
 
-header('location: index.php');
+    //On récupère le contenu du fichier
+    $texte = file_get_contents('email.txt');
+
+    //On ajoute notre nouveau texte à l'ancien
+    $texte .= "\n".$email;
+
+    //On écrit tout le texte dans notre fichier
+    file_put_contents('email.txt', $texte);
+
+    setcookie( "france-covid19-email", $email, strtotime( '+30 days' ) );
+
+    echo json_encode('ok');
+
+} else {
+    echo json_encode('ko');
+}
 ?>

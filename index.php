@@ -12,10 +12,10 @@
       </button>
 
         <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-            <a class="btn btn-success shadow" href="formulaire.php" target="_blank">
+            <!-- <a class="btn btn-success shadow" href="formulaire.php" target="_blank">
                 Avez-vous le COVID-19 ?
                 <i class="fas fa-user-nurse"></i>
-            </a>
+            </a> -->
             <ul class="navbar-nav ml-auto">
 
                 <li>
@@ -35,33 +35,54 @@
     </nav>
 
     <main role="main" class="container">
-        <div class="row d-md-none" style="margin-bottom: 5%;">
+        <!-- <div class="row d-md-none" style="margin-bottom: 5%;">
             <a class="btn btn-success btn-lg shadow col-lg-10 offset-lg-1" href="formulaire.php" target="_blank">
                 Avez-vous le COVID-19 ?
                 <i class="fas fa-user-nurse"></i>
             </a>
-        </div>
-            <div class="alert alert-danger shadow">
-                <h2 class="text-center"><span id="timerConfinement"></span></h2>
-                <h5 class="text-center">Avant la fin du confinement</h5>
-    
-                <hr>
-    
-                <blockquote class="blockquote text-center">
-                    <small class="mb-0">Emmanuel Macron estime que <strong>le confinement sera </strong> "vraisemblablement" <strong>prolongé</strong></small>
-                    <footer class="blockquote-footer"><cite title="Source Title">Franceinfo</cite></footer>
-                  </blockquote>
-    
-                  <blockquote class="blockquote text-center">
-                    <small class="mb-0">Le conseil scientifique de l'état donnera son avis <strong>mardi</strong> sur le confinement</small>
-                    <footer class="blockquote-footer"><cite title="Source Title">Le Figaro</cite></footer>
-                  </blockquote>
-                    
-            </p>
-    
-            </div>
+        </div> -->
 
-        <h4>Statistiques en France - Informations mise à jours le <span id="update"></span></h4>
+        <div class="alert alert-danger shadow text-center">
+            <h2 class="text-center"><span id="timerConfinement"></span></h2>
+            <h5 class="text-center">Avant la fin du confinement</h5>
+            <!-- <em>Pas officiellement prolongé</em> -->
+
+            <hr>
+
+            <blockquote class="blockquote text-center">
+                <small class="mb-0">
+                    <strong>Le confinement prolongé jusqu'au 11 mai</strong>
+                    <br>Le gouvernement présentera d’ici quinze jours le plan de l’après 11 mai et les détails d’organisation de notre vie quotidienne</small>
+                </small>
+                <footer class="blockquote-footer"><cite title="Source Title">Le Président de la République</cite></footer>
+            </blockquote>
+
+            <!-- <blockquote class="blockquote text-center">
+
+                <footer class="blockquote-footer"><cite title="Source Title">Ministère de l'intérieur</cite></footer>
+            </blockquote> -->
+        </div>
+
+
+        <!-- RECHERCHER UN AUTRE PAYS -->
+        <div class="row">
+            <div class="alert alert-info col-lg-12 text-center">
+              <h3 class="d-none d-md-block">Rechercher les statistiques d'un autre pays</h3>
+                <form>
+                    <div class="form-group">
+                        <input type="text" class="form-control col-lg-8 float-left" style="margin-bottom: 2%" id="countrySearch" placeholder="Rechercher les statistiques d'un autre pays">
+                    </div>
+                    <button id="sendSearch" type="submit" class="btn btn-primary mb-2 col-lg-3 float-right">Rechercher</button>
+                </form>
+            </div>
+        </div>
+        <!-- END RECHERCHER UN AUTRE PAYS -->
+
+
+
+        <!-- <h4>Statistiques en France - Informations mises à jour le <span id="updateFr" class="text-info"></span> - <span id="test" class="text-danger"></span> personnes testées </h4> -->
+        <div class="text-center h4">Informations mises à jour le <span id="updateTime" class="text-info"></span></div>
+        <div class="text-center h4"><span id="test" class="text-danger"></span> personnes testées - <span class="countryName">France</span> </div>
         <hr>
 
         <div class="row">
@@ -83,6 +104,7 @@
                   </div>
                 </div>
               </div>
+
 
               <div class="col-lg-3 mb-4">
                 <div class="card bg-success text-white shadow">
@@ -114,32 +136,6 @@
 
         <hr>
 
-        <!-- FORMULAIRE SYMPTOME -->
-        <div class="row">
-            <div class="alert alert-dark shadow col-lg-10 offset-lg-1 text-center ">
-                <a class="btn btn-danger btn-lg shadow" href="formulaire.php" target="_blank">
-                    Avez-vous le COVID-19 ?
-                    <i class="fas fa-user-nurse"></i>
-                </a>
-                <br /><br />
-                <h5>Répondez à ce questionnaire pour savoir si vous avez le Covid-19 et vous faire suivre par notre
-                    équipe d'étudiants en pharmacie volontaires.</h5>
-            </div>
-        </div>
-
-        <!-- CONFINEMENT -->
-        <div class="row">
-            <button class="btn btn-primary btn-lg shadow col-lg-10 offset-lg-1" data-toggle="modal"
-                data-target="#confinementModal">
-                <i class="fas fa-exclamation-triangle"></i>
-                <small>Cliquez ici pour voir les</small> <br >Règles du confinement
-                <i class="fas fa-exclamation-triangle"></i>
-            </button>
-
-        </div>
-
-        <hr>
-
         <!-- GESTES BARRIERE -->
         <div class="row">
 
@@ -153,10 +149,8 @@
                 </button>
             </div>
         </div>
-
-        <!-- END CONFINEMENT -->
-        <hr>
-        <h4 id="statsMondiales">Statistiques Mondiales</h4>
+        <div class="text-center h4">Informations mises à jour le <span id="updateTimeMonde" class="text-info"></span></div>
+        <div class="text-center h4"><span id="testWorld" class="text-danger"></span> personnes testées - <span class="countryWorld">Monde</span> </div>
         <hr>
         <!-- Content Row -->
         <div class="row">
@@ -221,6 +215,36 @@
             </div>
         </div>
 
+        <!-- GRAPHIQUE PAR CONTINENT -->
+        
+        <!-- FORMULAIRE SYMPTOME -->
+        <div class="row">
+            <div class="alert alert-dark shadow col-lg-10 offset-lg-1 text-center ">
+                <a class="btn btn-danger btn-lg shadow" href="formulaire.php" target="_blank">
+                    Avez-vous le COVID-19 ?
+                    <i class="fas fa-user-nurse"></i>
+                </a>
+                <br /><br />
+                <h5>Répondez à ce questionnaire pour savoir si vous avez le Covid-19 et vous faire suivre par notre
+                    équipe d'étudiants en pharmacie volontaires.</h5>
+            </div>
+        </div>
+
+        <!-- CONFINEMENT -->
+        <div class="row">
+            <button class="btn btn-primary btn-lg shadow col-lg-10 offset-lg-1" data-toggle="modal"
+                data-target="#confinementModal">
+                <i class="fas fa-exclamation-triangle"></i>
+                <small>Cliquez ici pour voir les</small> <br >Règles du confinement
+                <i class="fas fa-exclamation-triangle"></i>
+            </button>
+
+        </div>
+
+        <hr>
+
+        <!-- END CONFINEMENT -->
+
         <div class="row">
 
             <div class="alert alert-danger shadow text-center col-lg-10 offset-lg-1">
@@ -237,7 +261,43 @@
             </div>
         </div>
 
-
+        <div class="row text-center">
+        
+        <div class="alert alert-light text-center col-lg-12 d-none d-md-block">
+        
+            <div style="vertical-align: middle;text-align:center" class="float-left" id="o2adiv48206676">
+                <noscript><a href="http://www.okoclick.fr" target="_blank">Régie pub et affiliation - OkoClick</a></noscript>
+                <script type="text/javascript">
+                    var _oaf = _oaf || [];
+                    _oaf.push('3-1727-3385-1-30467424256-0-o2adiv48206676');
+                    (function() 
+                    {
+                        var oaScpt = (("https:" == document.location.protocol) ? "https://" : "http://") + "www.okoads.com/adj.js?"+Math.floor(Math.random()*99999999999);
+                        var oaSe = document.createElement('script');
+                        oaSe.src = oaScpt;
+                        oaSe.setAttribute('async', 'true');
+                        document.body.appendChild(oaSe);
+                    })();
+                </script>
+            </div>
+            <div style="vertical-align: middle;text-align:center" class="float-right d-none d-md-block" id="o8adiv6877270">
+                <noscript><a href="http://www.okoclick.fr" target="_blank">Régie pub et affiliation - OkoClick</a></noscript>
+                <script type="text/javascript">
+                    var _oaf = _oaf || [];
+                    _oaf.push('3-1727-3385-1-30467424256-0-o8adiv6877270');
+                    (function() 
+                    {
+                        var oaScpt = (("https:" == document.location.protocol) ? "https://" : "http://") + "www.okoads.com/adj.js?"+Math.floor(Math.random()*99999999999);
+                        var oaSe = document.createElement('script');
+                        oaSe.src = oaScpt;
+                        oaSe.setAttribute('async', 'true');
+                        document.body.appendChild(oaSe);
+                    })();
+                </script>
+            </div>
+        </div>
+        
+        </div>
 
         <hr>
 
@@ -264,18 +324,18 @@
             </div>
 
             <div id="maps" class="alert alert-warning shadow col-lg-5 offset-lg-2">
-                <h5 class="text-center">Carte intéractive</h5>
+                <h5 class="text-center">Carte interactive</h5>
                 <hr>
                 <h2 class="text-center">
                     <a class="btn btn-warning btn-lg" target="_blank"
                         href="https://www.arcgis.com/apps/opsdashboard/index.html#/bda7594740fd40299423467b48e9ecf6"
-                        role="button">Carte intéractive COVID-19 MONDIAL</a>
+                        role="button">Carte interactive COVID-19</a>
                 </h2>
 
                 <h2 class="text-center">
                     <a class="btn btn-primary btn-lg" target="_blank"
                         href="https://mapthenews.maps.arcgis.com/apps/opsdashboard/index.html#/5e09dff7cb434fb194e22261689e2887"
-                        role="button">Carte intéractive COVID-19 FRANCE</a>
+                        role="button">Carte interactive COVID-19 (france)</a>
                 </h2>
             </div>
         </div>
@@ -317,14 +377,13 @@
                     <br />
 
                     <ul>
-                        <li>Se déplacer de son domicile à son lieu de travail dès lors que le télétravail n’est pas
-                            possible ;</li>
-                        <li>Faire ses achats de première nécessité dans les commerces de proximité autorisés ;</li>
-                        <li>Se rendre auprès d’un professionnel de santé ;</li>
-                        <li>Se déplacer pour la garde de ses enfants ou pour aider les personnes vulnérables à la
-                            stricte condition de respecter les gestes barrières ;</li>
-                        <li>Faire de l’exercice physique uniquement à titre individuel, autour du domicile et sans aucun
-                            rassemblement. </li>
+                        <li>Déplacements entre le domicile et le lieu d’exercice de l’activité professionnelle, lorsqu’ils sont indispensables à l’<strong>exercice d’activités ne pouvant être organisées sous forme de télétravail ou déplacements professionnels ne pouvant être différés.</strong></li>
+                        <li>Déplacements pour effectuer des achats de fournitures nécessaires à l’activité professionnelle et des achats de première nécessité dans des établissements dont les activités demeurent autorisées.</li>
+                        <li><strong>Consultations et soins ne pouvant être assurés à distance et ne pouvant être différés</strong>; soin des patients atteints d'une affection de longue durée.</li>
+                        <li>Déplacements pour motif familial impérieux, pour l’assistance aux personnes vulnérables ou la garde d’enfants.</li>
+                        <li><strong class="text-danger">Déplacements brefs, dans la limite d'une heure quotidienne et dans un rayon maximal d'un kilomètre autour du domicile</strong>, liés soit à l'activité physique individuelle des personnes, à l'exclusion de toute pratique sportive collective et de toute proximité avec d'autres personnes, soit à la promenade avec les seules personnes regroupées dans un même domicile, soit aux besoins des animaux de compagnie.</li>
+                        <li>Convocation judiciaire ou administrative.</li>
+                        <li><strong>Participation à des missions d’intérêt général</strong> sur demande de l’autorité administrative</li>
                     </ul>
 
                     <strong>Les deux documents nécessaires pour circuler sont disponibles :</strong>
@@ -352,7 +411,7 @@
                 <div class="modal-footer">
 
                     <a class="btn btn-dark shadow"
-                        href="https://www.gouvernement.fr/sites/default/files/contenu/piece-jointe/2020/03/attestation_de_deplacement_derogatoire.pdf"
+                        href="https://www.gouvernement.fr/sites/default/files/contenu/piece-jointe/2020/03/attestation-deplacement-fr-20200324.pdf"
                         target="_blank">
                         Attestation individuel
                         <i class="fas fa-download"></i>
@@ -434,6 +493,24 @@
                         l’assistance aux personnes vulnérables.
                     </div>
 
+                    <!-- PUB -->
+                    <div style="vertical-align: middle;text-align:center" id="o2adiv66718960" class="d-none d-md-block">
+                        <noscript><a href="http://www.okoclick.fr" target="_blank">Régie pub et affiliation - OkoClick</a></noscript>
+                        <script type="text/javascript">
+                            var _oaf = _oaf || [];
+                            _oaf.push('3-1727-3385-1-134217728-0-o2adiv66718960');
+                            (function() 
+                            {
+                                var oaScpt = (("https:" == document.location.protocol) ? "https://" : "http://") + "www.okoads.com/adj.js?"+Math.floor(Math.random()*99999999999);
+                                var oaSe = document.createElement('script');
+                                oaSe.src = oaScpt;
+                                oaSe.setAttribute('async', 'true');
+                                document.body.appendChild(oaSe);
+                            })();
+                        </script>
+                    </div>
+                    <!-- END PUB -->
+
                 </div>
                 <div class="modal-footer">
                     <a class="btn btn-danger shadow"
@@ -470,9 +547,22 @@
                             </div>
                     </div>
 
-                    <div class="alert alert-info">
-                        <small class="form-text text-danger text-muted">Nous ne vous reposerons pas la question si vous nous envoyez votre email ou que vous cliquez sur "Ne plus me demander"</small>
+                    <div style="vertical-align: middle;text-align:center" id="o9adiv72514181" class="d-none d-md-block">
+                        <noscript><a href="http://www.okoclick.fr" target="_blank">Régie pub et affiliation - OkoClick</a></noscript>
+                        <script type="text/javascript">
+                            var _oaf = _oaf || [];
+                            _oaf.push('3-1727-3385-1-134217728-0-o9adiv72514181');
+                            (function() 
+                            {
+                                var oaScpt = (("https:" == document.location.protocol) ? "https://" : "http://") + "www.okoads.com/adj.js?"+Math.floor(Math.random()*99999999999);
+                                var oaSe = document.createElement('script');
+                                oaSe.src = oaScpt;
+                                oaSe.setAttribute('async', 'true');
+                                document.body.appendChild(oaSe);
+                            })();
+                        </script>
                     </div>
+                    
 
                 </div>
                 
@@ -491,14 +581,10 @@
     <!-- END MODAL -->
     <!-- Bootstrap core JavaScript-->
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Page level plugins -->
+    <script src="assets/js/jquery-ui/jquery-ui.min.js"></script>
     <script src="assets/vendor/chart.js/Chart.min.js"></script>
-    <!-- Page level custom scripts -->
-    <script src="assets/js/demo/chart-area-demo.js"></script>
-    <script src="assets/js/pages/dashboard.js"></script>
+    <script src="assets/js/dashboard.js"></script>
     <script src="assets/js/email.js"></script>
-
     <?php
     /**
      * Si l'utilisateur à déja rentrer son email alors on ne lui redemande pas
@@ -516,6 +602,22 @@
         </script>
 
      <?php } ?>
+
+     <?php
+    /**
+     * Redirection regle de confinement
+     */
+
+     if(isset($_GET['modal'])) {
+        if($_GET['modal'] == 'confinement') { ?>
+            <script>
+                $(() => {
+                    // Popup email
+                        $('#confinementModal').modal('show');
+                });
+            </script>
+        <?php }} ?>
+     
 
 </body>
 

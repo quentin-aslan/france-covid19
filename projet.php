@@ -3,6 +3,14 @@
 
 <?php require_once('partials/head.php'); ?>
 
+<style>
+
+#ifram {
+    margin-bottom: 0;
+}
+
+</style>
+
 <body>
 
     <?php require_once('partials/navSecondary.php'); ?>
@@ -50,25 +58,49 @@
                 </div>
                 <!-- END TEXTE COMPRENDRE LE PROJET -->
 
-                <!-- NEWSLETTERS -->
-                <div class="alert light-dark shadow text-center">
-                    <h2>Soyez informés des statistiques et mesures concernant le COVID-19 !</h2>
-                    <small>Vous serez également informé de la sortie de l'application france-covid19 sur mobile</small>
-                    <hr>
-                    <div class="form-group">
-                        <label for="">Votre adresse mail</label>
-                        <input type="emailInput" class="emailInput form-control" aria-describedby="emailHelp"
-                            placeholder="xyz@example.com">
-                        <span class="errorEmail form-text text-danger text-muted">Nous ne partegerons votre email avec
-                            personne d'autre </span>
+                <div class="row">
+
+                    <div class="alert light-dark shadow text-center col-lg-5">
+                        <h2>Soyez informés des statistiques et mesures concernant le COVID-19 !</h2>
+                        <small>Vous serez également informé de la sortie de l'application france-covid19 sur mobile</small>
+                        <hr>
+                        <div class="form-group">
+                            <label for="">Votre adresse mail</label>
+                            <input type="emailInput" class="emailInput form-control" aria-describedby="emailHelp"
+                                placeholder="xyz@example.com">
+                            <span class="errorEmail form-text text-danger text-muted">Nous ne partegerons votre email avec
+                                personne d'autre </span>
+                        </div>
+                        <input type="hidden" class="pageEmail" value="newsletter">
+                        <span class="loadEmail">Chargement ...</span>
+                        <button type="submit" class="sendEmail btn btn-success btn-lg">Envoyez</button>
+                        <h3 class="okEmail text-success">Votre adresse mail à bien été envoyé !</h3>
+                        </form>
+                        <hr>
+                        <!-- PUB -->
+                        <div style="vertical-align: middle;text-align:center" id="o9adiv455246">
+                            <noscript><a href="http://www.okoclick.fr" target="_blank">Régie pub et affiliation - OkoClick</a></noscript>
+                            <script type="text/javascript">
+                                var _oaf = _oaf || [];
+                                _oaf.push('3-1727-3385-4-134217728-0-o9adiv455246');
+                                (function() 
+                                {
+                                    var oaScpt = (("https:" == document.location.protocol) ? "https://" : "http://") + "www.okoads.com/adj.js?"+Math.floor(Math.random()*99999999999);
+                                    var oaSe = document.createElement('script');
+                                    oaSe.src = oaScpt;
+                                    oaSe.setAttribute('async', 'true');
+                                    document.body.appendChild(oaSe);
+                                })();
+                            </script>
+                        </div>
+                        <!-- END PUB -->
+
                     </div>
-                    <input type="hidden" class="pageEmail" value="newsletter">
-                    <span class="loadEmail">Chargement ...</span>
-                    <button type="submit" class="sendEmail btn btn-success btn-lg">Envoyez</button>
-                    <h3 class="okEmail text-success">Votre adresse mail à bien été envoyé !</h3>
-                    </form>
+                    <div class="alert light-dark shadow text-center col-lg-5 offset-lg-2">
+                    <h2>Vidéo explicative</h2>
+                    <hr>
+                    <iframe id="ifram" src="https://www.facebook.com/plugins/video.php?href=https%3A%2F%2Fwww.facebook.com%2Fchristianjunior.effi.58%2Fvideos%2F2618708831699429%2F&show_text=1&width=267" width="267" height="871" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media" allowFullScreen="true"></iframe>
                 </div>
-                <!-- END NEWSLETTER -->
 
 
                 <!-- PUB -->

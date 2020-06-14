@@ -6,26 +6,19 @@ $(() => {
 
 
   $('#stopEmail').click((e) => {
-      e.preventDefault();
-        document.location.href="addEmail.php?email=none";
+    e.preventDefault();
+    saveEmail('none');
   });
 
-  $('.sendEmail').click((e) => {
-    e.preventDefault();
-    $('.loadEmail').show();
-    $('.sendEmail').hide();
-    
-
-    let page = $('.pageEmail').val();
-    let email = $('.emailInput').val();
-    $.get(`http://admin.quentin-aslan.site/email/${email}?page=${page}`, function (data) {
+  function saveEmail(email) {
+    $.get(`addEmail.php?email=${email}`, function (data) {
     }).done(function (res) {
-      if (res == 'ok') {
+      console.log(res);
+      if (res == '"ok"') {
         $('.okEmail').show();
         $('.loadEmail').hide();
         $('.errorEmail').hide();
-        // On crée un cookie pour se rappeler qu'il à déja rentrer son adresse email !
-        document.location.href="addEmail.php?email="+email;
+        $('#emailModal').modal('hide');
       } else {
         $('.errorEmail').show();
         $('.errorEmail').html('Vous devez rentrer une adresse email valide.')
@@ -33,19 +26,29 @@ $(() => {
         $('.loadEmail').hide();
       }
     })
-    .fail(function () {
-      $('.sendEmail').show();
-      $('.loadEmail').hide();
-      alert('Une erreur est survenu, veuillez appuyer une seconde fois sur le bouton "Envoyé');
-    });
+      .fail(function () {
+        $('.sendEmail').show();
+        $('.loadEmail').hide();
+        alert('Une erreur est survenu, veuillez appuyer une seconde fois sur le bouton "Envoyé');
+      });
+  }
+
+  $('.sendEmail').click((e) => {
+    e.preventDefault();
+    $('.loadEmail').show();
+    $('.sendEmail').hide();
 
 
+    let page = $('.pageEmail').val();
+    let email = $('.emailInput').val();
 
-});
+    saveEmail(email);
 
-$('.donPaypal').click((e) => {
-  $('.loadDon').show();
-});
+  });
+
+  $('.donPaypal').click((e) => {
+    $('.loadDon').show();
+  });
 
 });
 

@@ -11,7 +11,8 @@
 
     <main role="main" class="container">
 
-        <h4>Aujourd'hui en France - <strong>Acutalisation</strong> tout les jours <strong>à 13h & 20H</strong>.</h4>
+        <div class="text-center h4">Informations mises à jour le <span id="updateTime" class="text-info"></span></div>
+        <div class="text-center h4"><span id="test" class="text-danger"></span> personnes testées - <span class="countryName">France</span> </div>
         <hr>
 
         <div class="row">
@@ -49,7 +50,7 @@
               <div class="col-lg-6 mb-4">
                 <div class="card bg-info text-white shadow">
                   <div class="card-body text-uppercase">
-                    <p style="float:left">Nombre d'inféctés pour 1 million de personnes</p>
+                    <p style="float:left">Nombre d'infectés pour 1 million de personnes</p>
                     <h1 class="text-white-50" style="float:right"><i class="fas fa-chart-line"></i> <span id="oneMillionCountry"><i class="fas fa-spinner fa-pulse"></i></span></h1>
                   </div>
                 </div>
@@ -60,7 +61,7 @@
         <div class="row">
 
         <!-- Area Chart -->
-        <div class="col-xl-6 col-lg-6 offset-lg-3">
+        <div class="col-xl-12 col-lg-12">
             <div class="card shadow mb-4">
                 <!-- Card Header - Dropdown -->
                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
@@ -90,7 +91,7 @@
                 <h5>Enfreindre les règles de confinement est passible d'une amende de</h5>
                 <h2><i class="fas fa-exclamation-triangle"></i>   135 €   <i class="fas fa-exclamation-triangle"></i></h2>
                 <br>
-                <h5>Pouvant être portée à <strong>375 €</strong></h5>
+                <h5>avec une possible majoration à <strong>375 €</strong> et <strong>1500 €</strong> en cas de récidive.</h5>
                 <img src="assets/images/statsAmendes.jfif" alt="">
             </div>
 
@@ -128,7 +129,6 @@
     <script src="assets/vendor/chart.js/Chart.min.js"></script>
     <!-- <script src="assets/js/pages/dashboard.js"></script> -->
     <script src="assets/js/email.js"></script>
-    <script src="assets/js/demo/chart-area-demo.js"></script>
     <script src="assets/js/statsFrance.js"></script>
 
 </body>
